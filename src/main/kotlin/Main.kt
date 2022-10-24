@@ -12,13 +12,19 @@ fun main() {
     contaPat.titular = "Patricia"
     contaPat.numero = 101
     contaPat.saldo = 2000.0
+    deposita(contaPat, 50.0)
     println(contaPat.titular)
     println(contaPat.numero)
     println(contaPat.saldo)
+
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
+}
+
+fun deposita(conta: Conta, valor: Double){
+    conta.saldo += valor
 }
