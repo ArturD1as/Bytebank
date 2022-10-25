@@ -12,19 +12,39 @@ fun main() {
     contaPat.titular = "Patricia"
     contaPat.numero = 101
     contaPat.saldo = 2000.0
-    deposita(contaPat, 50.0)
+    contaPat.deposita(100.0)
     println(contaPat.titular)
     println(contaPat.numero)
     println(contaPat.saldo)
-
+    contaPat.transfere(1000.0, contaArtur)
+    println(contaPat.saldo)
+    println(contaArtur.saldo)
 }
 
 class Conta {
     var titular = ""
     var numero = 0
     var saldo = 0.0
-}
 
-fun deposita(conta: Conta, valor: Double){
-    conta.saldo += valor
+    fun deposita(valor: Double) {
+        this.saldo += valor
+    }
+
+    fun saca(valor: Double) {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+        } else {
+            println("Valor de saque excedeu o limite")
+        }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean {
+        if (this.saldo >= valor) {
+            this.saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
+
+    }
 }
