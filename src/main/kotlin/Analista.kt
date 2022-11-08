@@ -9,7 +9,7 @@ class Analista(
 ){
 
     override fun bonificacao(): Double {
-        return super.bonificacao() + salario * 1.1
+        return  salario * 1.1
     }
 
 }

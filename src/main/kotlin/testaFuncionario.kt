@@ -18,7 +18,7 @@ fun testaFuncionario() {
         println("Falha na autenticação!")
     }
 
-    val pat = Funcionario(
+    val pat = Analista(
         nome = "Patricia",
         cpf = "222.222.222-22",
         salario = 5000.0,
